@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Django</title>
-</head>
-<body>
-<h1>{{titulo}}</h1>
+{% extends 'base.html' %}
+
+{% block head_title %}
+INICIO
+{% endblock %}
+
+{% block content %}
+
+<h1>{{ titulo }}</h1>
 {% if form %}
 <form method="POST" action="">{% csrf_token %}
 	{{ form.as_p }}
@@ -12,5 +14,4 @@
 </form>
 {% endif %}
 
-</body>
-</html>
+{% endblock %}
