@@ -7,7 +7,7 @@ class Registrado(models.Model):
 	codigo_postal = models.IntegerField(blank=True, null=True	)
 	timestap = models.DateTimeField(auto_now_add=True, auto_now=False)
 	actualizado = models.DateTimeField(auto_now_add=False, auto_now=True)
-	media = models.FileField(upload_to='myfolder/')
+	media = models.FileField(upload_to='myfolder/', blank=True, null=True)
 
 	def __str__(self):
 		return self.email

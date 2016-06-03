@@ -5,11 +5,18 @@ from .models import Registrado
 # Create your views here.
 def inicio(request):
 	titulo = "Bienvenidos"
-	form = RegistradoForm(request.POST or None)
-	
+	form = RegistradoForm(request.POST or None, request.FILES or None)
+	queryset = Registrado.objects.all()
+
+	for obj in queryset:
+		print (obj.nombre)
+		print (obj.email)
+		print (obj.id)
+
 	context = {
 		"titulo" : titulo,
-		"form" : form
+		"form" : form,
+		"queryset" :queryset
 	}
 
 	if form.is_valid():

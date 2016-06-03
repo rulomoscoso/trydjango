@@ -6,7 +6,7 @@ from .models import Registrado
 class RegistradoForm(forms.ModelForm):
 	class Meta:
 		model = Registrado
-		fields = ["nombre" ,"email"]
+		fields = ["nombre" ,"email", "media"]
 
 	def clean_email(self):
 		email = self.cleaned_data.get("email")
